@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="text">
+            <h1 id="title">qui est esse</h1>
+            <p id="body">est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla</p>
+        </div>
+        <button id="btn">Click Here</button>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" ></script>
+    <script>
+    let url = 'https://jsonplaceholder.typicode.com/posts';
+    $.get(url, function(data, status) {
+    console.log(data); 
+
+    //code for button
+    const $btn = $('#btn');
+    $btn.click(function(){
+        for(let i = 0;i<=100;i++){
+        $('#title').html('<span>"</span>'+data[i].title+'<span>"</span>');
+        $('#body').html('<span>"</span>'+data[i].body+'<span>"</span><br>');
+        }
+    })
+    function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+});
+    </script>
+</body>
+</html>
