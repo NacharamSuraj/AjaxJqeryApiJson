@@ -24,8 +24,7 @@
     const $btn = $('#btn');
     $btn.click(function(){
         $('#title').html('<span>"</span>'+data[getRandomInt(1,100)].title+'<span>"</span>');
-        $('#body').html('<span>"</span>'+data[getRandomInt(1,100)].body+'<span>"</span><br>');
-        
+        $('#body').html('<span>"</span>'+data[getRandomInt(1,100)].body+'<span>"</span>');
     })
     function getRandomInt(min, max) {
     min = Math.ceil(min);
